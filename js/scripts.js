@@ -1,11 +1,11 @@
 // Begin Business Logic
-//
-// var groceryList = ["grocery1", "grocery2", "grocery3", "grocery4"];
+
 
 // Begin User Interface Logic
 $(document).ready(function() {
 
 
+// Begin Grocery List
 
   $("#userInput").submit(function(event) {
     $("#userInput").hide();
@@ -20,20 +20,19 @@ $(document).ready(function() {
 
     groceryItems.forEach(function(groceryItem) {
       $("#list_output").append("<li>" + groceryItem.toUpperCase() + "</li>");
+    event.preventDefault();
     });
+  });
 
+// Begin Wordplay
 
-    // var groceries = [$("#grocery1").val(), $("#grocery2").val(), $("#grocery3").val(), $("#grocery4").val()].sort();
-
-    // groceries.toUpperCase();
-
-    // groceryLists.forEach(function(groceryList) {
-    //   var userInput = $("#" + groceryList).val();
-    //   $("." + groceryList).text(userInput.toUpperCase());
-
+  $("#wordplay").submit(function(event) {
+    var wordPlay = $("#sentence").val();
+    var wordPlayer = wordPlay.split();
+    console.log(wordPlayer);
+    
 
 
   event.preventDefault();
-    // });
   });
 });
